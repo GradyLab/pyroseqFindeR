@@ -1,14 +1,17 @@
 psfGetOptions <- function(){
   # dependancies
+  message("loading human genome, bld hg19..")
   suppressMessages(require('BSgenome.Hsapiens.UCSC.hg19'))
-  suppressMessages(require("IlluminaHumanMethylation450kprobe"))
+  message("loading HM450 annotation..")
+  suppressMessages(require("IlluminaHumanMethylation450kanno.ilmn12.hg19"))
+  suppressMessages(require("minfi"))
   
   x <- readline(message("Do you want to include annotations with your query? (enter y,n or default)"))
   if(x=="y")
   {
-    data(IlluminaHumanMethylation450kprobe)
-    anno <- IlluminaHumanMethylation450kprobe
-
+    data(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+    anno <- getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+ 
     message(paste0("Select what HM450 Manifest annotations to include. Column options are:"))
     for(i in 1:length(colnames(anno)))
     {
@@ -17,12 +20,12 @@ psfGetOptions <- function(){
     
     anno.cols <- readline(message("Enter column numbers to include (separated by ;): "))
     anno.cols <- as.numeric(gsub("[^0-9]","",unique(unlist(strsplit(anno.cols,";")))))
-    psfGetFlankseq(anno.cols=anno.cols)
+    psfGetFlankseq(anno,anno.cols)
   } else{
     if(x=="default"){
-      psfGetFlankseq(anno.cols=c(1,2,3,7,8,18,19,20,24,26))
+      psfGetFlankseq(anno,anno.cols=c(1,2,3,7,8,18,19,20,24,26))
     } else{
-      psfGetFlankseq()
+      psfGetFlankseq(anno=NULL,anno.cols=NULL)
     }
   }
 }
