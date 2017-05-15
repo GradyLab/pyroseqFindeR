@@ -1,5 +1,6 @@
 psfGetOptions <- function(){
   # dependancies
+  message("#################################\n### Welcome to PyroseqFindeR! ###\n#################################"
   message("loading human genome, bld hg19..")
   suppressMessages(require('BSgenome.Hsapiens.UCSC.hg19'))
   message("loading HM450 annotation..")
