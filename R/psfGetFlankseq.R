@@ -39,6 +39,9 @@ psfGetFlankseq <- function(anno,anno.cols=NULL){
       }
 
       message("Here is a preview of your probe info:")
+      Sys.sleep(1);message("...");
+      Sys.sleep(1);message("...");
+      Sys.sleep(1);message("...");
       print(head(return.matrix))
 
       z <- readline(message("Save this matrix as a csv? (enter y/n) "))
@@ -49,6 +52,9 @@ psfGetFlankseq <- function(anno,anno.cols=NULL){
 
       } else{
         message("Here is your final probe info:")
+        Sys.sleep(1);message("...");
+        Sys.sleep(1);message("...");
+        Sys.sleep(1);message("...");
         return(return.matrix)
 
       }
