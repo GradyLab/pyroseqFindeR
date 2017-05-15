@@ -9,6 +9,7 @@ psfGetOptions <- function(){
   x <- readline(message("Do you want to include annotations with your query? (enter y,n or default)"))
   if(x=="y")
   {
+    message("Bringing up annotation options..")
     data(IlluminaHumanMethylation450kanno.ilmn12.hg19)
     usranno <- getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
  
