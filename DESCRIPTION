@@ -3,7 +3,7 @@ Type: Package
 Title: Easily get flanking nucleotide sequences and annotations for HM450 CpG probes.
 Version: 0.1.0
 Author: Sean Maden
-Maintainer: smaden@fredhutch.org
+Maintainer: Sean Maden <smaden@fredhutch.org>
 Description: Interactively get flanking sequences and annotations for CpG methylation probes on the HM450 platform, for the purposes of designing Methylite and Pyrosequencing primers.
 License: What license is it under?
 Encoding: UTF-8
