@@ -1,8 +1,8 @@
 psfGetFlankseq <- function(anno.cols=NULL){
-  suppressMessages(require('BSgenome.Hsapiens.UCSC.hg19'))
-
+  
   x <- readline(message("Provide one or more probe IDs to search, separated by a semicolon(s) (eg. 'cg00035673;cg00040027;..'):"))
   probes <- unique(unlist(strsplit(x,";")))
+  
   if(nrow(anno[rownames(anno) %in% probes,])<length(probes)){
     message("Not all of the entered probe IDs are valid!")
     message("...done!")
