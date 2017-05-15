@@ -8,14 +8,15 @@ psfGetFlankseq <- function(anno,anno.cols=NULL){
     message("...done!")
   } else{
 
-    y <- as.numeric(readline(message("How many bp up/downstream do you want to look? ")))
+    y <- as.numeric(readline(message("How many bp up/downstream do you want to look? (reading 5' => 3' on pos/+ strand, relative to CpG position + 1 nt)")))
+    
     if(!is.numeric(y)){
       message("Invalid basepair range entered!")
       message("...done!")
     } else{
 
       return.matrix <- as.data.frame(matrix(nrow=length(probes),ncol=3))
-      colnames(return.matrix) <- c("probename",paste0(y,"bp_upstream"),paste0(y,"bp_downstream"))
+      colnames(return.matrix) <- c("probename",paste0(y,"nt_upstream"),paste0(y,"nt_downstream"))
 
       for(i in 1:length(probes)){
         return.matrix[i,1] <- probes[i]
