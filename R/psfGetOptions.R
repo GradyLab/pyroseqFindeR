@@ -10,20 +10,20 @@ psfGetOptions <- function(){
   if(x=="y")
   {
     data(IlluminaHumanMethylation450kanno.ilmn12.hg19)
-    anno <- getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+    usranno <- getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
  
     message(paste0("Select what HM450 Manifest annotations to include. Column options are:"))
-    for(i in 1:length(colnames(anno)))
+    for(i in 1:length(colnames(usranno)))
     {
-      message(paste0(i,". ",colnames(anno)[i]))
+      message(paste0(i,". ",colnames(usranno)[i]))
     }
     
     anno.cols <- readline(message("Enter column numbers to include (separated by ;): "))
     anno.cols <- as.numeric(gsub("[^0-9]","",unique(unlist(strsplit(anno.cols,";")))))
-    psfGetFlankseq(anno,anno.cols)
+    psfGetFlankseq(anno=usranno,anno.cols)
   } else{
     if(x=="default"){
-      psfGetFlankseq(anno,anno.cols=c(1,2,3,7,8,18,19,20,24,26))
+      psfGetFlankseq(anno=usranno,anno.cols=c(1,2,3,7,8,18,19,20,24,26))
     } else{
       psfGetFlankseq(anno=NULL,anno.cols=NULL)
     }
