@@ -8,7 +8,7 @@ psfGetFlankseq <- function(anno,anno.cols=NULL){
     message("...done!")
   } else{
 
-    y <- as.numeric(readline(message("How many bp up/downstream do you want to look? (reading 5' => 3' on pos/+ strand, relative to CpG position + 1 nt)")))
+    y <- as.numeric(readline(message("How many bp up/downstream do you want to look? (reading 5' => 3' on pos/+ strand relative to CpG position + 1 nt; consult chromosome coordinates if unsure of results)")))
     
     if(!is.numeric(y)){
       message("Invalid basepair range entered!")
