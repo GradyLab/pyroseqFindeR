@@ -4,8 +4,8 @@ psfGetFlankseq <- function(anno,anno.cols=NULL){
   probes <- unique(unlist(strsplit(x,";")))
   
   if(nrow(anno[rownames(anno) %in% probes,])<length(probes)){
-    message("Not all of the entered probe IDs are valid!")
-    message("...done!")
+    message("Error: Not all of the entered CpG probe IDs are valid.")
+    message("Returning..")
   } else{
 
     y <- as.numeric(readline(message("How many bp up/downstream do you want to look? (reading 5' => 3' on pos/+ strand relative to CpG position + 1 nt; consult chromosome coordinates if unsure of results)")))
