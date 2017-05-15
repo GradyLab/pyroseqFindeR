@@ -25,6 +25,8 @@ psfGetOptions <- function(){
     psfGetFlankseq(anno=usranno,anno.cols)
   } else{
     if(x=="default"){
+      data(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+      usranno <- getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
       psfGetFlankseq(anno=usranno,anno.cols=c(1,2,3,7,8,18,19,20,24,26))
     } else{
       psfGetFlankseq(anno=NULL,anno.cols=NULL)
