@@ -1,4 +1,4 @@
-psfGetFlankseq <- function(anno=NULL,anno.cols=NULL){
+psfGetFlankseq <- function(anno,anno.cols=NULL){
   
   x <- readline(message("Provide one or more probe IDs to search, separated by a semicolon(s) (eg. 'cg00035673;cg00040027;..'):"))
   probes <- unique(unlist(strsplit(x,";")))
