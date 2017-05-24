@@ -8,3 +8,7 @@ Description: Interactively get flanking sequences and annotations for CpG methyl
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports:
+    BSgenome.Hsapiens.UCSC.hg19
+    IlluminaHumanMethylation450kanno.ilmn12.hg19
+    minfi
